@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+
+{% for p in protons %}
+<tr>
+    <td>{{ p.name }}</td>
+    <td>{{ p.age }}</td>
+    <td>{{ p.track }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<h2>Add a Proton</h2>
+<form method="GET" action="/protons/add">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="p_name" required><br>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="p_age" required><br>
+    <label for="track">Track:</label>
+    <input type="text" id="track" name="p_track" required><br>
+    <input type="submit" value="Add Proton"><br>
+</form>
+{% endblock %}
